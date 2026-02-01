@@ -1,31 +1,36 @@
+/* ---------- Body & default cursor ---------- */
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
   background: #fff; /* White background */
   overflow-x: hidden;
-  cursor: url('images/cursor-default.jpg'), auto; /* Placeholder default cursor */
+  cursor: url('images/cursor-default.png'), auto; /* Placeholder default cursor */
 }
 
+/* ---------- Scroll container ---------- */
 .scroll-container {
   position: relative;
   width: 100%;
   min-height: 2000px; /* Enough space to scroll */
 }
 
+/* ---------- Scroll items ---------- */
 .scroll-item {
   position: absolute;
   opacity: 0;
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
+/* ---------- Image wrapper ---------- */
 .scroll-item-inner img {
-  border-radius: 8px;
+  border-radius: 0; /* Remove rounding */
   cursor: url('images/cursor-click.jpg'), pointer; /* Placeholder clickable cursor */
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  transition: box-shadow 0.3s ease; /* removed transform scale */
+  box-shadow: none; /* Remove hover shadow */
+  transition: none; /* Remove hover transition effects */
 }
 
+/* ---------- Hover effect ---------- */
 .scroll-item-inner img:hover {
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15); /* subtle glow on hover */
+  /* No glow, no scale, nothing happens */
 }
