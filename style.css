@@ -61,12 +61,12 @@ body {
   border-radius: 0;
   cursor: pointer;
   box-shadow: none;
-  transition: transform 0.6s ease; /* slide-in animation */
+  transition: transform 1.2s ease; /* slide-in animation */
 }
 
 .card-text {
   color: white;
   font-size: 1.5rem;
   max-width: 300px;
-  transition: transform 0.6s ease; /* slide-in animation */
+  transition: transform 1.2s ease; /* slide-in animation */
 }
