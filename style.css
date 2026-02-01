@@ -1,1 +1,52 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #111;
+  color: #fff;
+  overflow-x: hidden;
+}
 
+h1 {
+  text-align: center;
+  margin: 50px 0;
+  font-size: 3em;
+}
+
+.scroll-container {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.scroll-item {
+  margin: 80px 0;
+  opacity: 0; /* start invisible for fade-in */
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-item img {
+  width: 60%; /* default medium size */
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scroll-item.small img {
+  width: 40%;
+}
+
+.scroll-item img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(255,255,255,0.3);
+}
+
+.scroll-item.left { text-align: left; }
+.scroll-item.center { text-align: center; margin: auto; }
+.scroll-item.right { text-align: right; }
+
+@media (max-width: 768px){
+  .scroll-item img { width: 80% !important; }
+}
