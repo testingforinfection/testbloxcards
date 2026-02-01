@@ -4,7 +4,7 @@ body {
   font-family: sans-serif;
   background: #fff; /* White background */
   overflow-x: hidden;
-  cursor: url('images/cursor-default.png'), auto; /* Placeholder default cursor */
+  cursor: url('images/cursor-default.jpg'), auto; /* Placeholder default cursor */
 }
 
 .scroll-container {
@@ -21,7 +21,7 @@ body {
 
 .scroll-item-inner img {
   border-radius: 8px;
-  cursor: url('images/cursor-click.png'), pointer; /* Placeholder clickable cursor */
+  cursor: url('images/cursor-click.jpg'), pointer; /* Placeholder clickable cursor */
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
   transition: box-shadow 0.3s ease; /* removed transform scale */
 }
