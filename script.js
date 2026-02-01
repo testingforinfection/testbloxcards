@@ -1,5 +1,6 @@
 const scrollItems = document.querySelectorAll('.scroll-item');
 
+// Fade-in on scroll
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
@@ -24,36 +25,35 @@ scrollItems.forEach(item => {
   // Observe for fade-in
   observer.observe(item);
 
-  // Click event on image
-  img.addEventListener('click', () => {
-    const link = item.dataset.link;
-    if(link) window.open(link, "_blank");
-  });
+  // Clickable links for non-card images
+  if(item.dataset.card !== "true") {
+    img.addEventListener('click', () => {
+      const link = item.dataset.link;
+      if(link) window.open(link, "_blank");
+    });
+  }
 });
 
-// Parallax effect on images with data-parallax="true"
-document.addEventListener('mousemove', e => {
-  scrollItems.forEach(item => {
-    if(item.dataset.parallax === "true") {
-      const img = item.querySelector('img');
-      const rect = img.getBoundingClientRect();
-      const centerX = rect.left + rect.width/2;
-      const centerY = rect.top + rect.height/2;
 
-      const moveX = (centerX - e.clientX) * 0.03; // negative = moves away
-      const moveY = (centerY - e.clientY) * 0.03;
-
-      img.style.transform = `translate(${moveX}px, ${moveY}px)`;
-    }
-  });
+scrollItems.forEach(item => {
+  const img = item.querySelector('img');
+  if(item.dataset.parallax === "true") {
+    VanillaTilt.init(img, {
+      max: 15,           // max tilt rotation
+      speed: 400,        // animation speed
+      glare: true,       // shiny glare effect
+      "max-glare": 0.3,
+      scale: 1.05,       // slight zoom
+      perspective: 800   // 3D perspective distance
+    });
+  }
 });
 
-// Create overlay container
+
 const overlay = document.createElement('div');
 overlay.className = 'card-overlay';
 document.body.appendChild(overlay);
 
-// Create popup container inside overlay
 const popup = document.createElement('div');
 popup.className = 'card-popup';
 overlay.appendChild(popup);
@@ -65,23 +65,10 @@ const popupText = document.createElement('div');
 popupText.className = 'card-text';
 popup.appendChild(popupText);
 
-// Handle card clicks
 scrollItems.forEach(item => {
   if(item.dataset.card === "true") {
     const img = item.querySelector('img');
     img.addEventListener('click', (e) => {
-      e.stopPropagation(); // prevent parent click
-      // Set popup image src
-      popupImg.src = img.src;
-      // Set text if available
-      popupText.textContent = item.dataset.text || '';
-      // Show overlay
-      overlay.style.display = 'flex';
-    });
-  }
-});
-
-// Click overlay to close popup
-overlay.addEventListener('click', () => {
-  overlay.style.display = 'none';
-});
+      e.stopPropagation();
+      // Set image and text
+      popupImg.src = img.s
