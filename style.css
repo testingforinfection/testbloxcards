@@ -26,12 +26,12 @@ body {
   border-radius: 0;
   cursor: url('images/cursor-click.jpg') 16 16, pointer;
   box-shadow: none;
-  transition: transform 0.3s ease; /* smooth parallax */
+  transition: transform 0.3s ease;
   pointer-events: auto;
 }
 
 .scroll-item-inner img:hover {
-  /* no hover scale/glow beyond VanillaTilt */
+  /* No hover effect beyond VanillaTilt */
 }
 
 /* ---------- Overlay for card popup ---------- */
@@ -61,12 +61,12 @@ body {
   border-radius: 0;
   cursor: pointer;
   box-shadow: none;
-  transition: transform 0.6s ease; /* smooth slide-in from left */
+  transition: transform 0.6s ease; /* slide-in animation */
 }
 
 .card-text {
   color: white;
   font-size: 1.5rem;
   max-width: 300px;
-  transition: transform 0.6s ease; /* smooth slide-in from right */
+  transition: transform 0.6s ease; /* slide-in animation */
 }
