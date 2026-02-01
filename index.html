@@ -8,13 +8,28 @@
 </head>
 <body>
 
-  <h1>testingforinfection</h1>
-
   <div class="scroll-container">
-    <!-- Your image -->
-    <div class="scroll-item center">
-      <img src="images/FishmongerThing.jpeg" data-link="otherpage.html" alt="FishmongerThing">
+
+    <!-- Example image with parallax -->
+    <div class="scroll-item" 
+         data-link="https://bloxcards.org/"
+         data-parallax="true"
+         data-left="100" 
+         data-top="50">
+      <img src="images/FishmongerThing.jpeg" alt="FishmongerThing">
     </div>
+
+    <!-- Example image without parallax -->
+    <div class="scroll-item" 
+         data-link="https://https://bloxcards.org/"
+         data-parallax="false"
+         data-left="200" 
+         data-top="300">
+      <img src="images/FishmongerThing.jpeg" alt="Another Image">
+    </div>
+
+    <!-- Add more images here following the same pattern -->
+
   </div>
 
   <script src="script.js"></script>
