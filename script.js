@@ -8,7 +8,7 @@ VanillaTilt.init(document.querySelectorAll(".scroll-item img"), {
 document.querySelectorAll('.scroll-item img').forEach(img => {
   img.addEventListener('click', () => {
     const link = img.dataset.link;
-    if(link) window.open(link, '_blank');
+    if(link) window.open(link, '_blank'); // opens the link
   });
 });
 
