@@ -2,51 +2,31 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: #111;
-  color: #fff;
+  background: #fff; /* White background */
   overflow-x: hidden;
 }
 
-h1 {
-  text-align: center;
-  margin: 50px 0;
-  font-size: 3em;
-}
-
 .scroll-container {
-  width: 90%;
-  max-width: 1000px;
-  margin: auto;
+  position: relative;
+  width: 100%;
+  min-height: 2000px; /* Enough space to scroll */
 }
 
 .scroll-item {
-  margin: 80px 0;
-  opacity: 0; /* start invisible for fade-in */
-  transform: translateY(30px);
+  position: absolute; /* allows left/top offsets */
+  opacity: 0;
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .scroll-item img {
-  width: 60%; /* default medium size */
-  border-radius: 12px;
+  width: 300px; /* default width, can adjust per image if you want inline style */
+  border-radius: 8px;
   cursor: pointer;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.scroll-item.small img {
-  width: 40%;
 }
 
 .scroll-item img:hover {
   transform: scale(1.05);
-  box-shadow: 0 20px 40px rgba(255,255,255,0.3);
-}
-
-.scroll-item.left { text-align: left; }
-.scroll-item.center { text-align: center; margin: auto; }
-.scroll-item.right { text-align: right; }
-
-@media (max-width: 768px){
-  .scroll-item img { width: 80% !important; }
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
