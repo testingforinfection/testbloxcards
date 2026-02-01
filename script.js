@@ -65,4 +65,10 @@ document.addEventListener('DOMContentLoaded', () => {
         overlay.style.display = 'flex';
 
         // Animate card and text from sides
-        popupImg.style.transform = 'translateX(-100vw)
+        popupImg.style.transform = 'translateX(-100vw)';
+        popupText.style.transform = 'translateX(100vw)';
+        
+        requestAnimationFrame(() => {
+          popupImg.style.transform = 'translateX(0)';
+          popupText.style.transform = 'translateX(0)';
+        });
