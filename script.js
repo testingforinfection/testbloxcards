@@ -47,3 +47,41 @@ document.addEventListener('mousemove', e => {
     }
   });
 });
+
+// Create overlay container
+const overlay = document.createElement('div');
+overlay.className = 'card-overlay';
+document.body.appendChild(overlay);
+
+// Create popup container inside overlay
+const popup = document.createElement('div');
+popup.className = 'card-popup';
+overlay.appendChild(popup);
+
+const popupImg = document.createElement('img');
+popup.appendChild(popupImg);
+
+const popupText = document.createElement('div');
+popupText.className = 'card-text';
+popup.appendChild(popupText);
+
+// Handle card clicks
+scrollItems.forEach(item => {
+  if(item.dataset.card === "true") {
+    const img = item.querySelector('img');
+    img.addEventListener('click', (e) => {
+      e.stopPropagation(); // prevent parent click
+      // Set popup image src
+      popupImg.src = img.src;
+      // Set text if available
+      popupText.textContent = item.dataset.text || '';
+      // Show overlay
+      overlay.style.display = 'flex';
+    });
+  }
+});
+
+// Click overlay to close popup
+overlay.addEventListener('click', () => {
+  overlay.style.display = 'none';
+});
