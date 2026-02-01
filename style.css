@@ -15,12 +15,11 @@ body {
 }
 
 /* ---------- Scroll items ---------- */
-.scroll-item {
-  position: absolute;
-  opacity: 0;
-  transform: translateY(20px); /* start slightly down */
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+.scroll-item img[src$=".gif"] {
+  transition: opacity 0.8s ease-out !important;
+  transform: none !important;
 }
+
 
 
 /* ---------- Images ---------- */
