@@ -13,20 +13,19 @@ body {
 }
 
 .scroll-item {
-  position: absolute; /* allows left/top offsets */
+  position: absolute;
   opacity: 0;
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-.scroll-item img {
-  width: 300px; /* default width, can adjust per image if you want inline style */
+.scroll-item-inner img {
   border-radius: 8px;
   cursor: pointer;
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.scroll-item img:hover {
+.scroll-item-inner img:hover {
   transform: scale(1.05);
   box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
