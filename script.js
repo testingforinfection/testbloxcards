@@ -1,4 +1,3 @@
-// Fade-in on scroll
 const scrollItems = document.querySelectorAll('.scroll-item');
 
 const observer = new IntersectionObserver(entries => {
@@ -11,35 +10,40 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 
 scrollItems.forEach(item => {
-  // Set initial left/top from data attributes
+  // Set container left/top from data attributes
   const left = item.dataset.left || 0;
   const top = item.dataset.top || 0;
   item.style.left = left + "px";
   item.style.top = top + "px";
 
-  observer.observe(item);
-});
+  // Set image width from data-size
+  const img = item.querySelector('img');
+  const size = item.dataset.size || 300;
+  img.style.width = size + "px";
 
-// Click to open link
-scrollItems.forEach(item => {
-  item.addEventListener('click', () => {
+  // Observe for fade-in
+  observer.observe(item);
+
+  // Click event on image
+  img.addEventListener('click', () => {
     const link = item.dataset.link;
     if(link) window.open(link, "_blank");
   });
 });
 
-// Parallax effect (away from cursor) for selected items
+// Parallax effect on images with data-parallax="true"
 document.addEventListener('mousemove', e => {
   scrollItems.forEach(item => {
     if(item.dataset.parallax === "true") {
-      const rect = item.getBoundingClientRect();
+      const img = item.querySelector('img');
+      const rect = img.getBoundingClientRect();
       const centerX = rect.left + rect.width/2;
       const centerY = rect.top + rect.height/2;
 
-      const moveX = (centerX - e.clientX) * 0.03; // negative: moves away
+      const moveX = (centerX - e.clientX) * 0.03; // negative = moves away
       const moveY = (centerY - e.clientY) * 0.03;
 
-      item.style.transform = `translate(${moveX}px, ${moveY}px)`;
+      img.style.transform = `translate(${moveX}px, ${moveY}px)`;
     }
   });
 });
