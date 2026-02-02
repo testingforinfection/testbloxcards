@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
         max: 15,
         speed: 400,
         glare: true,
-        'max-glare': 1,
-        scale: 2,
+        'max-glare': 0.8,
+        scale: 1.05,
         perspective: 800
       });
     }
