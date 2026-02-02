@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         glare: true,
         'max-glare': 0.3,
         scale: 1.05,
-        perspective: 800
+        perspective: 1500
       });
     }
   });
