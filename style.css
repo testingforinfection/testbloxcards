@@ -8,21 +8,26 @@ body {
 }
 
 /* ---------- Scroll container ---------- */
+/* MUST be the positioning context */
 .scroll-container {
   position: relative;
-  width: 100%;
+  width: 100vw;
   min-height: 10000px;
+  margin: 0;
+  padding: 0;
 }
 
 /* ---------- Scroll items ---------- */
 .scroll-item {
   position: absolute;
+  top: 0;
+  left: 0;
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-/* GIFs: no transform weirdness */
+/* ---------- GIF exception ---------- */
 .scroll-item img[src$=".gif"] {
   transition: opacity 0.8s ease-out !important;
   transform: none !important;
