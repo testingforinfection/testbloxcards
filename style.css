@@ -11,16 +11,22 @@ body {
 .scroll-container {
   position: relative;
   width: 100%;
-  min-height: 10000px; 
+  min-height: 10000px;
 }
 
 /* ---------- Scroll items ---------- */
+.scroll-item {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* GIFs: no transform weirdness */
 .scroll-item img[src$=".gif"] {
   transition: opacity 0.8s ease-out !important;
   transform: none !important;
 }
-
-
 
 /* ---------- Images ---------- */
 .scroll-item-inner img {
@@ -29,45 +35,4 @@ body {
   box-shadow: none;
   transition: transform 0.3s ease;
   pointer-events: auto;
-}
-
-.scroll-item-inner img:hover {
-  /* No hover effect beyond VanillaTilt */
-}
-
-/* ---------- Overlay for card popup ---------- */
-.card-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-}
-
-/* ---------- Card popup container ---------- */
-.card-popup {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-
-.card-popup img {
-  max-width: 500px;
-  max-height: 80vh;
-  border-radius: 0;
-  cursor: pointer;
-  box-shadow: none;
-  transition: transform 1.2s ease; /* slide-in animation */
-}
-
-.card-text {
-  color: white;
-  font-size: 1.5rem;
-  max-width: 300px;
-  transition: transform 1.2s ease; /* slide-in animation */
 }
