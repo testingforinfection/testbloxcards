@@ -1,4 +1,3 @@
-/* ---------- Body ---------- */
 body {
   margin: 0;
   padding: 0;
@@ -7,8 +6,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ---------- Scroll container ---------- */
-/* MUST be the positioning context */
 .scroll-container {
   position: relative;
   width: 100vw;
@@ -17,7 +14,6 @@ body {
   padding: 0;
 }
 
-/* ---------- Scroll items ---------- */
 .scroll-item {
   position: absolute;
   top: 0;
@@ -27,13 +23,11 @@ body {
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-/* ---------- GIF exception ---------- */
 .scroll-item img[src$=".gif"] {
   transition: opacity 0.8s ease-out !important;
   transform: none !important;
 }
 
-/* ---------- Images ---------- */
 .scroll-item-inner img {
   border-radius: 0;
   cursor: url('images/cursor-click.jpg') 16 16, pointer;
