@@ -33,9 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
         max: 15,
         speed: 400,
         glare: true,
-        'max-glare': 0.3,
-        scale: 1.05,
-        perspective: 1500
+        'max-glare': 1,
+        scale: 2,
+        perspective: 800
       });
     }
   });
